@@ -1,0 +1,252 @@
+.app-shell {
+	--color-bg: #eef3fa;
+	--color-surface: #fbfdff;
+	--color-text: #223347;
+	--color-muted: #5b6f86;
+	--color-border: #ccd8e7;
+	--color-accent: #6a8fb3;
+	--color-accent-hover: #577da3;
+	--color-shadow: 106, 143, 179;
+	min-height: 100vh;
+	background-color: var(--color-bg);
+	color: var(--color-text);
+}
+
+.app-shell main {
+	color: var(--color-text);
+}
+
+.site-navbar {
+	border-bottom: 1px solid var(--color-border);
+	background-color: var(--color-surface);
+	margin-bottom: 1.5rem;
+}
+
+.site-navbar__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.site-navbar__brand-icon {
+	display: inline-block;
+	vertical-align: text-top;
+}
+
+.site-navbar__links {
+	margin-left: auto;
+}
+
+.site-navbar__link {
+	font-weight: 500;
+	color: var(--color-muted);
+}
+
+.site-navbar__link--active {
+	font-weight: 700;
+	color: var(--color-accent);
+}
+
+.page-centered {
+	min-height: calc(100vh - 7rem);
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.25rem;
+}
+
+.page-card {
+	margin: 1rem;
+	padding: 0.5rem;
+}
+
+.page-card__body {
+	text-align: center;
+}
+
+.page-link {
+	font-weight: 600;
+}
+
+.home-page {
+	padding-top: 1.25rem;
+	padding-bottom: 2rem;
+}
+
+.home-page__hero-row {
+	justify-content: center;
+	margin-bottom: 1.5rem;
+}
+
+.home-page__hero-col {
+	text-align: center;
+}
+
+.home-page__eyebrow {
+	margin-bottom: 0.5rem;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	font-weight: 700;
+	letter-spacing: 0.06em;
+}
+
+.home-page__title {
+	margin-bottom: 0.75rem;
+	font-size: clamp(2rem, 3vw, 2.85rem);
+	font-weight: 700;
+}
+
+.home-page__lead {
+	margin-bottom: 1.5rem;
+	font-size: 1.15rem;
+	color: var(--color-muted);
+}
+
+.home-page__actions {
+	display: flex;
+	justify-content: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+
+.home-page__grid {
+	row-gap: 1.5rem;
+}
+
+.home-page__panel {
+	height: 100%;
+	border: 0;
+	background-color: var(--color-surface);
+	box-shadow: 0 10px 24px rgba(var(--color-shadow), 0.12);
+}
+
+.about-page {
+	padding-top: 1.25rem;
+	padding-bottom: 2rem;
+}
+
+.about-page__header-row {
+	justify-content: center;
+	margin-bottom: 1.5rem;
+}
+
+.about-page__eyebrow {
+	margin-bottom: 0.5rem;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	font-weight: 700;
+	letter-spacing: 0.06em;
+}
+
+.about-page__title {
+	margin-bottom: 0.75rem;
+	font-size: clamp(1.85rem, 2.6vw, 2.4rem);
+	font-weight: 700;
+}
+
+.about-page__lead {
+	margin-bottom: 0;
+	font-size: 1.05rem;
+	color: var(--color-muted);
+}
+
+.about-page__grid {
+	row-gap: 1.25rem;
+}
+
+.about-page__panel {
+	height: 100%;
+	border: 0;
+	background-color: var(--color-surface);
+	box-shadow: 0 10px 24px rgba(var(--color-shadow), 0.12);
+}
+
+.about-page__list .list-group-item {
+	padding-left: 0;
+	padding-right: 0;
+	background-color: transparent;
+	color: var(--color-text);
+	border-color: var(--color-border);
+}
+
+.projects-page {
+	padding-top: 1.25rem;
+	padding-bottom: 2rem;
+}
+
+.projects-page__intro-row {
+	justify-content: center;
+	margin-bottom: 1.5rem;
+}
+
+.projects-page__intro-col {
+	text-align: center;
+}
+
+.projects-page__eyebrow {
+	margin-bottom: 0.5rem;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	font-weight: 700;
+	letter-spacing: 0.06em;
+}
+
+.projects-page__title {
+	margin-bottom: 0.75rem;
+	font-size: clamp(2rem, 3vw, 2.85rem);
+	font-weight: 700;
+}
+
+.projects-page__lead {
+	margin-bottom: 1.5rem;
+	font-size: 1.15rem;
+	color: var(--color-muted);
+}
+
+.projects-page__grid {
+	row-gap: 1.5rem;
+}
+
+.project-card {
+	height: 100%;
+	background-color: var(--color-surface);
+	border-color: var(--color-border);
+	box-shadow: 0 10px 24px rgba(var(--color-shadow), 0.12);
+}
+
+.project-card__body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.project-card__description {
+	color: var(--color-muted);
+}
+
+.project-card__tags {
+	margin-top: auto;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.app-shell .btn-primary {
+	--bs-btn-bg: var(--color-accent);
+	--bs-btn-border-color: var(--color-accent);
+	--bs-btn-hover-bg: var(--color-accent-hover);
+	--bs-btn-hover-border-color: var(--color-accent-hover);
+	--bs-btn-active-bg: var(--color-accent-hover);
+	--bs-btn-active-border-color: var(--color-accent-hover);
+}
+
+.app-shell .btn-outline-secondary {
+	--bs-btn-color: var(--color-muted);
+	--bs-btn-border-color: var(--color-border);
+	--bs-btn-hover-color: var(--color-text);
+	--bs-btn-hover-bg: rgba(var(--color-shadow), 0.12);
+	--bs-btn-hover-border-color: var(--color-border);
+	--bs-btn-active-bg: rgba(var(--color-shadow), 0.18);
+	--bs-btn-active-border-color: var(--color-border);
+}
