@@ -11,7 +11,7 @@ export default function NavBar() {
         <Navbar.Brand as={NavLink} to="/" end className="d-flex align-items-center gap-2">
           <img
             src={`${import.meta.env.BASE_URL}favicon.svg`}
-            alt=""
+            alt="Black icon with initials JS (The website creator Jackson Sprenger)"
             aria-hidden="true"
             width="24"
             height="24"
