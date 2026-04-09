@@ -8,8 +8,16 @@ export default function NavBar() {
   return (
     <Navbar expand="md" className="border-bottom bg-body-tertiary mb-4">
       <Container>
-        <Navbar.Brand as={NavLink} to="/" end>
-          Codefolio
+        <Navbar.Brand as={NavLink} to="/" end className="d-flex align-items-center gap-2">
+          <img
+            src={`${import.meta.env.BASE_URL}favicon.svg`}
+            alt=""
+            aria-hidden="true"
+            width="24"
+            height="24"
+            className="d-inline-block align-text-top"
+          />
+          <span>Codefolio</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
