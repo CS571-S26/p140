@@ -4,7 +4,7 @@ import NavBar from './NavBar.jsx'
 
 export default function Layout() {
   return (
-    <div className="app-shell theme--dusty">
+    <div className="app-shell">
       <NavBar />
       <main>
         <Outlet />

@@ -1,29 +1,4 @@
 .app-shell {
-	--color-bg: #f4f7fa;
-	--color-surface: #ffffff;
-	--color-text: #1f2a37;
-	--color-muted: #5f6b7a;
-	--color-border: #dce3ea;
-	--color-accent: #4f6d8a;
-	--color-accent-hover: #3f5a74;
-	--color-shadow: 79, 109, 138;
-	min-height: 100vh;
-	background-color: var(--color-bg);
-	color: var(--color-text);
-}
-
-.theme--coastal {
-	--color-bg: #f4f7fa;
-	--color-surface: #ffffff;
-	--color-text: #1f2a37;
-	--color-muted: #5f6b7a;
-	--color-border: #dce3ea;
-	--color-accent: #4f6d8a;
-	--color-accent-hover: #3f5a74;
-	--color-shadow: 79, 109, 138;
-}
-
-.theme--dusty {
 	--color-bg: #eef3fa;
 	--color-surface: #fbfdff;
 	--color-text: #223347;
@@ -32,6 +7,9 @@
 	--color-accent: #6a8fb3;
 	--color-accent-hover: #577da3;
 	--color-shadow: 106, 143, 179;
+	min-height: 100vh;
+	background-color: var(--color-bg);
+	color: var(--color-text);
 }
 
 .app-shell main {
@@ -57,40 +35,6 @@
 
 .site-navbar__links {
 	margin-left: auto;
-}
-
-.theme-switcher {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	margin-top: 0.75rem;
-}
-
-.theme-switcher__label {
-	font-size: 0.82rem;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	color: var(--color-muted);
-}
-
-.theme-switcher__button {
-	border-color: var(--color-border);
-	color: var(--color-text);
-	background-color: var(--color-surface);
-}
-
-.theme-switcher__button--active {
-	background-color: var(--color-accent);
-	border-color: var(--color-accent);
-	color: #fff;
-}
-
-@media (min-width: 768px) {
-	.theme-switcher {
-		margin-top: 0;
-		margin-left: 0.75rem;
-	}
 }
 
 .site-navbar__link {
