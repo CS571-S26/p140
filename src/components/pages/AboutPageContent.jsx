@@ -1,4 +1,5 @@
-import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 export default function AboutPageContent() {
   return (
@@ -13,7 +14,7 @@ export default function AboutPageContent() {
         </Col>
       </Row>
 
-      <Row xs={1} md={2} className="about-page__grid">
+      <Row xs={1} md={2} lg={3} className="about-page__grid">
         <Col>
           <Card className="about-page__panel">
             <Card.Body>
@@ -30,9 +31,22 @@ export default function AboutPageContent() {
               <Card.Title>What I&apos;m Currently Developing</Card.Title>
               <ListGroup variant="flush" className="about-page__list">
                 <ListGroup.Item>Minecraft Mods</ListGroup.Item>
-                <ListGroup.Item>A plan to replace microsoft</ListGroup.Item>
-                <ListGroup.Item>A new way to blow bubbles</ListGroup.Item>
+                <ListGroup.Item>A plan to replace microsoft (i work in it for a company that uses windows)</ListGroup.Item>
+                <ListGroup.Item>a compiler faster than C (not true i didn't enjoy compilers)</ListGroup.Item>
               </ListGroup>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card className="about-page__panel">
+            <Card.Body>
+              <Card.Title>Contact</Card.Title>
+              <Card.Text>
+                Want to reach out or see where I&apos;m easiest to find?
+              </Card.Text>
+              <Button as={Link} to="/contact" variant="outline-secondary">
+                Contact Me
+              </Button>
             </Card.Body>
           </Card>
         </Col>

@@ -1,5 +1,7 @@
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import FeelingLuckyButton from '../FeelingLuckyButton.jsx'
+import FeaturedProjectsCarousel from './FeaturedProjectsCarousel.jsx'
 
 export default function HomePageContent() {
   return (
@@ -13,40 +15,26 @@ export default function HomePageContent() {
             coursework, side projects, and growth as a developer.
           </p>
           <div className="home-page__actions">
-            <Button as={Link} to="/projects" variant="primary">
+            <Button as={Link} to="/projects" variant="primary" className="home-page__action-button">
               View Projects
             </Button>
-            <Button as={Link} to="/about" variant="outline-secondary">
+            <Button as={Link} to="/about" variant="outline-secondary" className="home-page__action-button">
               About Me
             </Button>
+            <Button as={Link} to="/contact" variant="outline-secondary" className="home-page__action-button">
+              Contact Me
+            </Button>
+            <FeelingLuckyButton variant="outline-secondary" className="home-page__action-button" />
           </div>
         </Col>
       </Row>
 
-      <Row xs={1} md={3} className="home-page__grid">
+      <Row className="home-page__featured-row">
         <Col>
-          <Card className="home-page__panel">
-            <Card.Body>
-              <Card.Title>Placeholder 1</Card.Title>
-              <Card.Text>Placeholder text.</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="home-page__panel">
-            <Card.Body>
-              <Card.Title>Placeholder 2</Card.Title>
-              <Card.Text>Placeholder text.</Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col>
-          <Card className="home-page__panel">
-            <Card.Body>
-              <Card.Title>Placeholder 3</Card.Title>
-              <Card.Text>Placeholder text.</Card.Text>
-            </Card.Body>
-          </Card>
+          <div className="home-page__section-heading">
+            <p className="home-page__eyebrow">Featured Projects</p>
+          </div>
+          <FeaturedProjectsCarousel />
         </Col>
       </Row>
     </Container>
