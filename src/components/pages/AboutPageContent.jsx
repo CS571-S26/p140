@@ -1,4 +1,5 @@
-import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, ListGroup, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 export default function AboutPageContent() {
   return (
@@ -30,8 +31,8 @@ export default function AboutPageContent() {
               <Card.Title>What I&apos;m Currently Developing</Card.Title>
               <ListGroup variant="flush" className="about-page__list">
                 <ListGroup.Item>Minecraft Mods</ListGroup.Item>
-                <ListGroup.Item>A plan to replace microsoft</ListGroup.Item>
-                <ListGroup.Item>A new way to blow bubbles</ListGroup.Item>
+                <ListGroup.Item>A plan to replace microsoft (i work in it for a company that uses windows)</ListGroup.Item>
+                <ListGroup.Item>a compiler faster than C (not true i didn't enjoy compilers)</ListGroup.Item>
               </ListGroup>
             </Card.Body>
           </Card>
@@ -39,40 +40,13 @@ export default function AboutPageContent() {
         <Col>
           <Card className="about-page__panel">
             <Card.Body>
-              <Card.Title>Find Me Online</Card.Title>
-              <Card.Text className="about-page__contact-intro">
-                Connect with me through these links.
+              <Card.Title>Contact</Card.Title>
+              <Card.Text>
+                Want to reach out or see where I&apos;m easiest to find?
               </Card.Text>
-              <ListGroup variant="flush" className="about-page__list">
-                <ListGroup.Item>
-                  <a
-                    href="https://www.linkedin.com/in/your-linkedin"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="about-page__contact-link"
-                  >
-                    LinkedIn
-                  </a>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <a
-                    href="https://github.com/your-github"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="about-page__contact-link"
-                  >
-                    GitHub
-                  </a>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <a
-                    href="mailto:you@example.com"
-                    className="about-page__contact-link"
-                  >
-                    Email
-                  </a>
-                </ListGroup.Item>
-              </ListGroup>
+              <Button as={Link} to="/contact" variant="outline-secondary">
+                Contact Me
+              </Button>
             </Card.Body>
           </Card>
         </Col>
