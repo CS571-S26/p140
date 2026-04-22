@@ -170,6 +170,23 @@
 	border-color: var(--color-border);
 }
 
+.about-page__contact-intro {
+	color: var(--color-muted);
+	margin-bottom: 0.5rem;
+}
+
+.about-page__contact-link {
+	text-decoration: none;
+	font-weight: 600;
+	color: var(--color-accent);
+}
+
+.about-page__contact-link:hover,
+.about-page__contact-link:focus-visible {
+	color: var(--color-accent-hover);
+	text-decoration: underline;
+}
+
 .projects-page {
 	padding-top: 1.25rem;
 	padding-bottom: 2rem;
@@ -208,11 +225,31 @@
 	row-gap: 1.5rem;
 }
 
+.projects-page__tag-filters {
+	display: flex;
+	justify-content: center;
+	gap: 0.45rem;
+	margin-bottom: 1.35rem;
+	flex-wrap: wrap;
+}
+
+.projects-page__empty-state {
+	text-align: center;
+	color: var(--color-muted);
+	margin-top: 0.5rem;
+}
+
 .project-card {
 	height: 100%;
 	background-color: var(--color-surface);
 	border-color: var(--color-border);
 	box-shadow: 0 10px 24px rgba(var(--color-shadow), 0.12);
+}
+
+.project-card__image {
+	height: 170px;
+	object-fit: cover;
+	border-bottom: 1px solid var(--color-border);
 }
 
 .project-card__body {
@@ -223,6 +260,11 @@
 
 .project-card__description {
 	color: var(--color-muted);
+}
+
+.project-card__github-link {
+	align-self: flex-start;
+	margin-bottom: 0.75rem;
 }
 
 .project-card__tags {
