@@ -1,9 +1,25 @@
+import { useState } from 'react'
 import { Badge, Button, Card } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { getTagToneClass } from '../../utils/tagStyles.js'
+import { readJsonCookie, writeJsonCookie } from '../../utils/cookieStore.js'
+
+const PROJECT_LIKE_COOKIE_PREFIX = 'codefolio-project-like-'
+
+function getProjectLikeCookieKey(slug) {
+  return `${PROJECT_LIKE_COOKIE_PREFIX}${slug}`
+}
+
+function readProjectLikeState(slug) {
+  return readJsonCookie(getProjectLikeCookieKey(slug), {
+    liked: false,
+    likeCount: 0,
+  })
+}
 
 export default function ProjectCard({ title, description, tags, slug, imageUrl, githubUrl }) {
   const navigate = useNavigate()
+  const [likeState, setLikeState] = useState(() => readProjectLikeState(slug))
 
   function goToDetails() {
     navigate(`/projects/${slug}`)
@@ -16,6 +32,18 @@ export default function ProjectCard({ title, description, tags, slug, imageUrl, 
     }
   }
 
+  function handleLikeClick(event) {
+    event.stopPropagation()
+
+    const nextLikeState = {
+      liked: !likeState.liked,
+      likeCount: likeState.liked ? 0 : 1,
+    }
+
+    setLikeState(nextLikeState)
+    writeJsonCookie(getProjectLikeCookieKey(slug), nextLikeState)
+  }
+
   return (
     <Card
       className="project-card"
@@ -24,6 +52,19 @@ export default function ProjectCard({ title, description, tags, slug, imageUrl, 
       onClick={goToDetails}
       onKeyDown={handleKeyDown}
     >
+      <Button
+        type="button"
+        className={`project-card__like-button${likeState.liked ? ' project-card__like-button--liked' : ''}`}
+        variant="light"
+        aria-label={`${likeState.liked ? 'Unlike' : 'Like'} ${title}`}
+        aria-pressed={likeState.liked}
+        onClick={handleLikeClick}
+      >
+        <span className="project-card__like-icon" aria-hidden="true">
+          {likeState.liked ? '♥' : '♡'}
+        </span>
+        <span className="project-card__like-count">{likeState.likeCount}</span>
+      </Button>
       <Card.Img
         variant="top"
         src={imageUrl}

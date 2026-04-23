@@ -198,6 +198,20 @@ body.project-detail-active .site-navbar__link--active {
 	font-size: 1.05rem;
 }
 
+.secret-page__check-in {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 1.5rem;
+}
+
+.secret-page__counter {
+	margin-bottom: 0;
+	font-weight: 600;
+	color: var(--color-muted);
+}
+
 .secret-page__actions {
 	display: flex;
 	justify-content: center;
@@ -522,6 +536,7 @@ body.project-detail-active .site-navbar__link--active {
 }
 
 .project-card {
+	position: relative;
 	height: 100%;
 	background-color: var(--color-surface);
 	border-color: var(--color-border);
@@ -534,6 +549,43 @@ body.project-detail-active .site-navbar__link--active {
 .project-card:focus-visible {
 	transform: translateY(-3px);
 	box-shadow: 0 14px 28px rgba(var(--color-shadow), 0.18);
+}
+
+.project-card__like-button {
+	position: absolute;
+	top: 0.75rem;
+	right: 0.75rem;
+	z-index: 2;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 0.35rem 0.7rem;
+	border: 1px solid rgba(255, 90, 54, 0.18);
+	border-radius: 999px;
+	box-shadow: 0 8px 18px rgba(var(--color-shadow), 0.12);
+	font-weight: 700;
+	line-height: 1;
+	color: var(--color-accent);
+}
+
+.project-card__like-button:hover,
+.project-card__like-button:focus-visible {
+	color: var(--color-accent-hover);
+}
+
+.project-card__like-button--liked {
+	background-color: #ffe2db;
+	border-color: rgba(255, 90, 54, 0.36);
+}
+
+.project-card__like-icon {
+	font-size: 0.85rem;
+	transform: translateY(-0.03rem);
+}
+
+.project-card__like-count {
+	min-width: 0.9rem;
+	text-align: center;
 }
 
 .project-card__image {
