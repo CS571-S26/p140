@@ -78,7 +78,7 @@ export default function ProjectCard({ title, description, tags, slug, imageUrl, 
           as="a"
           href={githubUrl}
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           size="sm"
           className="project-card__github-link"
           onClick={event => event.stopPropagation()}

@@ -101,7 +101,7 @@ export default function ProjectDetailPage() {
                 <Button as={Link} to="/contact" variant="outline-secondary">
                   Contact Me
                 </Button>
-                <Button as="a" href={project.githubUrl} target="_blank" rel="noreferrer" variant="primary">
+                <Button as="a" href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="primary">
                   View on GitHub
                 </Button>
               </div>

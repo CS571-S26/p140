@@ -23,7 +23,7 @@ export default function ContactsPageContent() {
                   <a
                     href="https://www.linkedin.com/in/your-linkedin"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="contacts-page__link"
                   >
                     LinkedIn
@@ -33,7 +33,7 @@ export default function ContactsPageContent() {
                   <a
                     href="https://github.com/your-github"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="contacts-page__link"
                   >
                     GitHub
