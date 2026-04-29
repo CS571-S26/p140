@@ -50,11 +50,7 @@ export default function ProjectsPageContent() {
       <Row className="projects-page__intro-row">
         <Col lg={8} className="projects-page__intro-col">
           <p className="projects-page__eyebrow">Projects</p>
-          <h1 className="projects-page__title">Things I&apos;ve Built</h1>
-          <p className="projects-page__lead">
-            Browse what I&apos;m currently focused on and what I&apos;ve completed in
-            the past.
-          </p>
+          <h1 className="projects-page__title">What I&apos;ve Built</h1>
         </Col>
       </Row>
 
