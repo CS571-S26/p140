@@ -82,6 +82,7 @@ export default function ProjectsPageContent() {
               tags={project.tags}
               slug={project.slug}
               imageUrl={project.imageUrl}
+                imageAlt={project.imageAlt}
               githubUrl={project.githubUrl}
             />
           </Col>
