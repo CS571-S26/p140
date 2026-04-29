@@ -8,11 +8,10 @@ export default function HomePageContent() {
     <Container className="home-page">
       <Row className="home-page__hero-row">
         <Col lg={8} className="home-page__hero-col">
-          <p className="home-page__eyebrow">Portfolio</p>
-          <h1 className="home-page__title">Hi, I&apos;m Jackson.</h1>
+          <p className="home-page__eyebrow">Home</p>
+          <h1 className="home-page__title">Hi there, I&apos;m Jackson.</h1>
           <p className="home-page__lead">
-            This is a placeholder. I&apos;ll use this site to highlight my
-            coursework, side projects, and growth as a developer.
+            This website is a place for me to show the rest of the world what I&apos;ve been working on!
           </p>
           <div className="home-page__actions">
             <Button as={Link} to="/projects" variant="primary" className="home-page__action-button">
