@@ -4,8 +4,8 @@
 	--color-text: #213547;
 	--color-muted: #4f6476;
 	--color-border: #ffd3bb;
-	--color-accent: #ff5a36;
-	--color-accent-hover: #e64b2b;
+	--color-accent: #ce482b;
+	--color-accent-hover: #d34527;
 	--color-shadow: 255, 90, 54;
 	min-height: 100vh;
 	background-color: var(--color-bg);

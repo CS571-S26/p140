@@ -6,7 +6,7 @@ import { getTagToneClass } from '../utils/tagStyles.js'
 
 export default function ProjectDetailPage() {
   const { projectSlug } = useParams()
-  const project = projects.find(candidate => candidate.slug === projectSlug)
+  const project = projects.find(candidate => candidate.slug === projectSlug && candidate.show === true)
   const navigate = useNavigate()
   const [heroOffset, setHeroOffset] = useState(0)
 
@@ -101,7 +101,7 @@ export default function ProjectDetailPage() {
                 <Button as={Link} to="/contact" variant="outline-secondary">
                   Contact Me
                 </Button>
-                <Button as="a" href={project.githubUrl} target="_blank" rel="noreferrer" variant="primary">
+                <Button as="a" href={project.githubUrl} target="_blank" rel="noopener noreferrer" variant="primary">
                   View on GitHub
                 </Button>
               </div>
@@ -113,7 +113,7 @@ export default function ProjectDetailPage() {
           <Col lg={7}>
             <Card className="project-detail-page__panel project-detail-page__panel--full-height">
               <Card.Body>
-                <Card.Title className="project-detail-page__section-title">In-Depth Description</Card.Title>
+                <Card.Title className="project-detail-page__section-title">Detailed Overview</Card.Title>
                 <Card.Text className="project-detail-page__text">{project.overview}</Card.Text>
               </Card.Body>
             </Card>
@@ -122,13 +122,13 @@ export default function ProjectDetailPage() {
           <Col lg={5}>
             <Card className="project-detail-page__panel project-detail-page__panel--full-height">
               <Card.Body>
-                <Card.Title className="project-detail-page__section-title">Highlights</Card.Title>
+                <Card.Title className="project-detail-page__section-title">Project Highlights</Card.Title>
                 <ListGroup variant="flush" className="project-detail-page__highlights">
                   {project.highlights.map(highlight => (
                     <ListGroup.Item key={highlight}>{highlight}</ListGroup.Item>
                   ))}
                 </ListGroup>
-                <h3 className="project-detail-page__tags-title">Technology Tags</h3>
+                <h3 className="project-detail-page__tags-title">Tags</h3>
                 <div className="project-detail-page__tags">
                   {project.tags.map(tag => (
                     <Badge key={tag} pill className={`tag-pill ${getTagToneClass(tag)}`}>

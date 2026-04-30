@@ -5,12 +5,15 @@ import { projects } from '../../data/projects.js'
 
 export default function ProjectsPageContent() {
   const [selectedTags, setSelectedTags] = useState(['All'])
+  const visibleProjects = useMemo(() => {
+    return projects.filter(project => project.show === true)
+  }, [])
 
   const availableTags = useMemo(() => {
-    const tags = projects.flatMap(project => project.tags)
+    const tags = visibleProjects.flatMap(project => project.tags)
 
     return ['All', ...new Set(tags)]
-  }, [])
+  }, [visibleProjects])
 
   function handleTagClick(tag) {
     if (tag === 'All') {
@@ -33,7 +36,7 @@ export default function ProjectsPageContent() {
   }
 
   const filteredProjects = useMemo(() => {
-    return projects.filter(project => {
+    return visibleProjects.filter(project => {
       const hasAllSelected = selectedTags.includes('All')
       const tagMatch = hasAllSelected || selectedTags.every(tag => project.tags.includes(tag))
 
@@ -43,18 +46,14 @@ export default function ProjectsPageContent() {
 
       return true
     })
-  }, [selectedTags])
+  }, [selectedTags, visibleProjects])
 
   return (
     <Container className="projects-page">
       <Row className="projects-page__intro-row">
         <Col lg={8} className="projects-page__intro-col">
           <p className="projects-page__eyebrow">Projects</p>
-          <h1 className="projects-page__title">Things I&apos;ve Built</h1>
-          <p className="projects-page__lead">
-            Browse what I&apos;m currently focused on and what I&apos;ve completed in
-            the past.
-          </p>
+          <h1 className="projects-page__title">What I&apos;ve Built</h1>
         </Col>
       </Row>
 
@@ -86,6 +85,7 @@ export default function ProjectsPageContent() {
               tags={project.tags}
               slug={project.slug}
               imageUrl={project.imageUrl}
+                imageAlt={project.imageAlt}
               githubUrl={project.githubUrl}
             />
           </Col>

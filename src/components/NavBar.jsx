@@ -11,7 +11,7 @@ export default function NavBar() {
         <Navbar.Brand as={NavLink} to="/" end className="site-navbar__brand">
           <img
             src={`${import.meta.env.BASE_URL}favicon.svg`}
-            alt="Black icon with initials JS (The website creator Jackson Sprenger)"
+            alt=""
             aria-hidden="true"
             width="24"
             height="24"

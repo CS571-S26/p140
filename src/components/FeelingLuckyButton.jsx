@@ -2,7 +2,9 @@ import { Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { projects } from '../data/projects.js'
 
-const projectRoutes = projects.map(project => `/projects/${project.slug}`)
+const projectRoutes = projects
+  .filter(project => project.show === true)
+  .map(project => `/projects/${project.slug}`)
 
 export default function FeelingLuckyButton({ className = '', variant = 'outline-secondary', size }) {
   const navigate = useNavigate()
