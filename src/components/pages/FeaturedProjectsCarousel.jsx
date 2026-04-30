@@ -2,7 +2,7 @@ import { Carousel } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import { projects } from '../../data/projects.js'
 
-const featuredProjects = projects.slice(0, 3)
+const featuredProjects = projects.filter(project => project.show === true).slice(0, 3)
 
 export default function FeaturedProjectsCarousel() {
   const navigate = useNavigate()

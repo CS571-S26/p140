@@ -6,7 +6,7 @@ import { getTagToneClass } from '../utils/tagStyles.js'
 
 export default function ProjectDetailPage() {
   const { projectSlug } = useParams()
-  const project = projects.find(candidate => candidate.slug === projectSlug)
+  const project = projects.find(candidate => candidate.slug === projectSlug && candidate.show === true)
   const navigate = useNavigate()
   const [heroOffset, setHeroOffset] = useState(0)
 

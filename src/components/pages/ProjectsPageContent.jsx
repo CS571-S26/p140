@@ -5,12 +5,15 @@ import { projects } from '../../data/projects.js'
 
 export default function ProjectsPageContent() {
   const [selectedTags, setSelectedTags] = useState(['All'])
+  const visibleProjects = useMemo(() => {
+    return projects.filter(project => project.show === true)
+  }, [])
 
   const availableTags = useMemo(() => {
-    const tags = projects.flatMap(project => project.tags)
+    const tags = visibleProjects.flatMap(project => project.tags)
 
     return ['All', ...new Set(tags)]
-  }, [])
+  }, [visibleProjects])
 
   function handleTagClick(tag) {
     if (tag === 'All') {
@@ -33,7 +36,7 @@ export default function ProjectsPageContent() {
   }
 
   const filteredProjects = useMemo(() => {
-    return projects.filter(project => {
+    return visibleProjects.filter(project => {
       const hasAllSelected = selectedTags.includes('All')
       const tagMatch = hasAllSelected || selectedTags.every(tag => project.tags.includes(tag))
 
@@ -43,7 +46,7 @@ export default function ProjectsPageContent() {
 
       return true
     })
-  }, [selectedTags])
+  }, [selectedTags, visibleProjects])
 
   return (
     <Container className="projects-page">
